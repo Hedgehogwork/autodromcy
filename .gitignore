@@ -1,0 +1,11 @@
+*.pyc
+*~
+*.swp
+*.log
+db
+/collected_static
+/build
+local_settings.py
+log.txt
+/static
+/.env/
