@@ -9,17 +9,17 @@ for i in range(1):
     link_list = soup.find_all('a')
     filtered_link_list = [
         link for link in link_list
-        if 'carDetails.php?' in link['href'] and not 'SOLD' in str(link)
+        if '/carDetails.php?' in link['href'] and not 'SOLD' in str(link)
     ]
     links_set.update([link['href'] for link in filtered_link_list])
-
 print 'Total: %s' % len(links_set )
 
 def get_data_from_carDetails(url):
     print url
     data_dict = dict()
 
-    link = 'http://www.bestcypruscar.com/i%s' % url
+    # link = 'http://www.bestcypruscar.com/i%s' % url
+    link = url
     r = requests.get(link)
     soup = BeautifulSoup(r.text)
 
@@ -28,11 +28,13 @@ def get_data_from_carDetails(url):
         data_dict['title'] = titlu_masina[:titlu_masina.find('<')].strip()
 
     names = ['year', 'color', 'milage', 'engine', 'gears', 'power']
+
     celula_alb = soup.find_all('td', class_='TextCelulaAlb')
-    print unicode(r.text)
-    print celula_alb
+
+    # print unicode(r.text)
+    # print celula_alb
     for index, name in enumerate(names):
-        print index
+        # print index
         item = str(celula_alb[index])
         item = item.replace('<td class="TextCelulaAlb">', '')
         item = item.replace('</td>', '')
