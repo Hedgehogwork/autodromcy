@@ -1,5 +1,12 @@
+import os
+import datetime
 import requests
 from bs4 import BeautifulSoup
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "autodromcy.settings")
+
+from car.models import Car
+
 
 links_set = set()
 
@@ -62,7 +69,10 @@ def get_data_from_carDetails(url):
 
     posted_text_index = r.text.find('Posted on:')
     posted_on = r.text[posted_text_index+11:posted_text_index+22]
-    data_dict['posted_on'] = posted_on
+    data_dict['posted_on'] = datetime.datetime.strptime(
+        posted_on,
+        "%d-%b-%Y"
+    ).date()
     del soup
     return data_dict
 
@@ -72,5 +82,7 @@ for link_href in links_set:
     print '------------------'
     print link_href
     data = get_data_from_carDetails(link_href)
+    car = Car(**data)
+    car.save()
     for item in data.items():
         print item
