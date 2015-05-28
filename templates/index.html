@@ -1,0 +1,472 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+
+    <link rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/select/bootstrap-select.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/main.css" %}">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <meta charset="UTF-8">
+    <title>AutodromCY</title>
+</head>
+<body>
+
+
+<header class="main-top row">
+    <div class="container">
+        <div class="col-md-2 main-top-logo"></div>
+        <div class="col-md-2"><h1>AutoDromCY</h1></div>
+    </div>
+</header>
+<nav class="navbar navbar-default mainNav affix-top  <!--navbar-fixed-top-->" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">AutoDromCY</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Buying<span class="sr-only">(current)</span></a></li>
+                <li><a href="/rentacar.html">Renta a Car</a></li>
+                <!--<li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>-->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<section class="contents">
+
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 panel panel-default">
+
+        <h3>Filter</h3>
+        <div class="row form-group">
+            <div class="col-md-12 ">
+                <select class="selectpicker span2" data-width="100%" title='Choose City ...' data-live-search="true">
+                    <option>Any city</option>
+                    <option>Limassol</option>
+                    <option>Nikosia</option>
+                    <option>Pafos</option>
+                    <option>Larnaka</option>
+                </select>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 ">
+                <select class="selectpicker span2" data-width="100%" title='Choose City ...' data-live-search="true">
+                    <option>Make (any)</option>
+                    <optgroup label="Often">
+                        <option class="bold" value="">Toyota (10)</option>
+                        <option class="bold" value="">Nissan (30)</option>
+                        <option class="bold" value="">Honda (100)</option>
+                        <option class="bold" value="">Mazda (50)</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option value="">AC</option>
+                        <option value="">Acura (12)</option>
+                        <option value="">Alfa Romeo (1)</option>
+                        <option value="">Alpina (1)</option>
+                        <option value="">Asia</option>
+                        <option value="">Aston Martin</option>
+                        <option value="">Audi (159)</option>
+                        <option value="">Bentley</option>
+                        <option value="">BMW (287)</option>
+                        <option value="">Brilliance</option>
+                        <option value="">Bugatti</option>
+                        <option value="">Buick</option>
+                        <option value="">BYD (2)</option>
+                    </optgroup>
+                </select>
+            </div>
+            <!-- Зависит от выбора предыдущего селекта -->
+            <div class="col-md-6 ">
+                <select class="selectpicker span2" data-width="100%" data-live-search="true">
+                    <option>Model (any)</option>
+                    <option>----</option>
+                    <option>----</option>
+                    <option>----</option>
+                    <option>----</option>
+                </select>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6">
+                <select class="selectpicker span2" data-width="100%" title=''>
+                    <option>Min price</option>
+                    <option value="0">€0</option>
+                    <option value="500">€500</option>
+                    <option value="1000">€1,000</option>
+                    <option value="1500">€1,500</option>
+                    <option value="2000">€2,000</option>
+                    <option value="2500">€2,500</option>
+                    <option value="3000">€3,000</option>
+                    <option value="3500">€3,500</option>
+                    <option value="4000">€4,000</option>
+                    <option value="4500">€4,500</option>
+                    <option value="5000">€5,000</option>
+                    <option value="5500">€5,500</option>
+                    <option value="6000">€6,000</option>
+                    <option value="6500">€6,500</option>
+                    <option value="7000">€7,000</option>
+                    <option value="7500">€7,500</option>
+                    <option value="8000">€8,000</option>
+                    <option value="8500">€8,500</option>
+                    <option value="9000">€9,000</option>
+                    <option value="9500">€9,500</option>
+                    <option value="10000">€10,000</option>
+                    <option value="11000">€11,000</option>
+                    <option value="12000">€12,000</option>
+                    <option value="13000">€13,000</option>
+                    <option value="14000">€14,000</option>
+                    <option value="15000">€15,000</option>
+                    <option value="16000">€16,000</option>
+                    <option value="17000">€17,000</option>
+                    <option value="18000">€18,000</option>
+                    <option value="19000">€19,000</option>
+                    <option value="20000">€20,000</option>
+                    <option value="22500">€22,500</option>
+                    <option value="25000">€25,000</option>
+                    <option value="27500">€27,500</option>
+                    <option value="30000">€30,000</option>
+                    <option value="35000">€35,000</option>
+                    <option value="40000">€40,000</option>
+                    <option value="45000">€45,000</option>
+                    <option value="50000">€50,000</option>
+                    <option value="55000">€55,000</option>
+                    <option value="60000">€60,000</option>
+                    <option value="65000">€65,000</option>
+                    <option value="70000">€70,000</option>
+                    <option value="75000">€75,000</option>
+                    <option value="100000">€100,000</option>
+                    <option value="250000">€250,000</option>
+                    <option value="500000">€500,000</option>
+                </select>
+            </div>
+            <!-- Зависит от выбора предыдущего селекта -->
+            <div class="col-md-6 ">
+                <select class="selectpicker span2" data-width="100%">
+                    <option value="">Max price</option>
+                    <option value="0">€0</option>
+                    <option value="500">€500</option>
+                    <option value="1000">€1,000</option>
+                    <option value="1500">€1,500</option>
+                    <option value="2000">€2,000</option>
+                    <option value="2500">€2,500</option>
+                    <option value="3000">€3,000</option>
+                    <option value="3500">€3,500</option>
+                    <option value="4000">€4,000</option>
+                    <option value="4500">€4,500</option>
+                    <option value="5000">€5,000</option>
+                    <option value="5500">€5,500</option>
+                    <option value="6000">€6,000</option>
+                    <option value="6500">€6,500</option>
+                    <option value="7000">€7,000</option>
+                    <option value="7500">€7,500</option>
+                    <option value="8000">€8,000</option>
+                    <option value="8500">€8,500</option>
+                    <option value="9000">€9,000</option>
+                    <option value="9500">€9,500</option>
+                    <option value="10000">€10,000</option>
+                    <option value="11000">€11,000</option>
+                    <option value="12000">€12,000</option>
+                    <option value="13000">€13,000</option>
+                    <option value="14000">€14,000</option>
+                    <option value="15000">€15,000</option>
+                    <option value="16000">€16,000</option>
+                    <option value="17000">€17,000</option>
+                    <option value="18000">€18,000</option>
+                    <option value="19000">€19,000</option>
+                    <option value="20000">€20,000</option>
+                    <option value="22500">€22,500</option>
+                    <option value="25000">€25,000</option>
+                    <option value="27500">€27,500</option>
+                    <option value="30000">€30,000</option>
+                    <option value="35000">€35,000</option>
+                    <option value="40000">€40,000</option>
+                    <option value="45000">€45,000</option>
+                    <option value="50000">€50,000</option>
+                    <option value="55000">€55,000</option>
+                    <option value="60000">€60,000</option>
+                    <option value="65000">€65,000</option>
+                    <option value="70000">€70,000</option>
+                    <option value="75000">€75,000</option>
+                    <option value="100000">€100,000</option>
+                    <option value="250000">€250,000</option>
+                    <option value="500000">€500,000</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="row form-group">
+            <div class="col-md-offset-8" style="text-align: right;">
+                <button type="submit" id="more-option-open" class="btn btn-link">More options <span class="glyphicon glyphicon-chevron-down"
+                                                                              aria-hidden="true"></span></button>
+                <button type="submit" id="more-option-close" class="btn btn-link add-option">Close <span class="glyphicon glyphicon-remove"
+                                                                              aria-hidden="true"></span></button>
+            </div>
+        </div>
+        <div class="row form-group add-option">
+            <div class="col-md-6 ">
+                <select class="selectpicker span2" data-width="100%" title=''>
+                    <option>Min age (any)</option>
+                    <option value="0">€0</option>
+                    <option value="500">€500</option>
+                    <option value="1000">€1,000</option>
+                    <option value="1500">€1,500</option>
+                    <option value="2000">€2,000</option>
+                    <option value="2500">€2,500</option>
+
+                </select>
+            </div>
+            <div class="col-md-6 ">
+                <select class="selectpicker span2" data-width="100%">
+                    <option value="">Max age (any)</option>
+                    <option value="0">€0</option>
+                    <option value="500">€500</option>
+                    <option value="1000">€1,000</option>
+                    <option value="1500">€1,500</option>
+                </select>
+            </div>
+        </div>
+        <div class="row form-group add-option">
+            <div class="col-md-6 ">
+                <select class="selectpicker span2" data-width="100%" title=''>
+                    <option>Mileage (any)</option>
+                   <option value="up_to_100_miles">up to 100 Km</option>
+            <option value="up_to_1000_miles">up to 1,000 Km</option>
+            <option value="up_to_5000_miles">up to 5,000 Km</option>
+            <option value="up_to_10000_miles">up to 10,000 Km</option>
+            <option value="up_to_15000_miles">up to 15,000 Km</option>
+            <option value="up_to_20000_miles">up to 20,000 Km</option>
+            <option value="up_to_25000_miles">up to 25,000 Km</option>
+            <option value="up_to_30000_miles">up to 30,000 Km</option>
+            <option value="up_to_35000_miles">up to 35,000 Km</option>
+            <option value="up_to_40000_miles">up to 40,000 Km</option>
+            <option value="up_to_45000_miles">up to 45,000 Km</option>
+            <option value="up_to_50000_miles">up to 50,000 Km</option>
+            <option value="up_to_60000_miles">up to 60,000 Km</option>
+            <option value="up_to_70000_miles">up to 70,000 Km</option>
+            <option value="up_to_80000_miles">up to 80,000 Km</option>
+            <option value="up_to_90000_miles">up to 90,000 Km</option>
+            <option value="up_to_100000_miles">up to 100,000 Km</option>
+            <option value="over_100000_miles">over 100,000 Km</option>
+            <option value="unlisted">Unlisted</option>
+
+                </select>
+            </div>
+            <div class="col-md-6 ">
+                <select class="selectpicker span2" data-width="100%">
+                    <option selected="selected" value="">Fuel type (any)</option>
+                    <option value="bi_fuel">Bi Fuel</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="electric">Electric</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="lpg">LPG</option>
+                    <option value="petrol">Petrol</option>
+                    <option value="unlisted">Unlisted</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="row form-group add-option car-dody-style">
+            <div class="col-md-12">
+                <select class="selectpicker" data-width="100%" multiple>
+                    <option value="any" selected="selected" data-icon="glyphicon-any-body glyphicon--img">Body style (any)</option>
+                    <option data-icon="glyphicon-sedan glyphicon--img">Sedan</option>
+                    <option data-icon="glyphicon-hatchback glyphicon--img">Hatchback</option>
+                    <option data-icon="glyphicon-universal glyphicon--img">Universal</option>
+                    <option data-icon="glyphicon-suv glyphicon--img">SUV/Off-road</option>
+                    <option data-icon="glyphicon-van glyphicon--img">Van</option>
+                    <option data-icon="glyphicon-convertible glyphicon--img">Convertible</option>
+                    <option data-icon="glyphicon-coupe glyphicon--img">Coupe</option>
+                    <option data-icon="glyphicon-limousine glyphicon--img">Limousine</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="row form-group">
+            <div class="col-md-12">
+                <button type="submit" id="search-bay-car" class="btn btn-lg btn-block btn-primary">Search ...</button>
+            </div>
+        </div>
+
+
+
+    </div>
+                <div class="col-md-offset-4">
+                    <div id="carousel-main-vip" class="carousel slide carousel--main-vip" data-ride="carousel">
+        <!-- Indicators -->
+        <!--
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+        -->
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner carousel-inner--main-vip">
+            <div class="item active">
+                <div class="item-sub">
+                    <div class="carousel-price-sub">10000 EUR</div>
+                    <img src="{% static "img/auto/premium_138372249.jpg" %}" alt="auto1">
+
+
+                    <div class="carousel-caption--sub">
+                       <p>Toyota</p>
+                    </div>
+                </div>
+                <div class="item-sub">
+                    <div class="carousel-price-sub">10000 EUR</div>
+                    <img src="{% static "img/auto/premium_138372249.jpg" %}" alt="auto2">
+                    <div class="carousel-caption--sub">
+                        <p>Toyota</p>
+                    </div>
+                </div>
+                <div class="item-sub">
+                    <div class="carousel-price-sub">10000 EUR</div>
+                    <img src="{% static "img/auto/premium_138372249.jpg" %}" alt="auto3">
+                    <div class="carousel-caption--sub">
+                        <p>Toyota</p>
+                    </div>
+                </div>
+                <div class="item-sub">
+                    <div class="carousel-price-sub">10000 EUR</div>
+                    <img src="{% static "img/auto/premium_138372249.jpg" %}" alt="auto3">
+                    <div class="carousel-caption--sub">
+                        <p>Toyota</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="item">
+                <div class="item-sub">
+                    <div class="carousel-price-sub">10000 EUR</div>
+                    <img src="{% static "img/auto/premium_138372249.jpg" %}" alt="auto1">
+                    <div class="carousel-caption--sub">
+                        <p>Auto 1</p>
+                    </div>
+                </div>
+                <div class="item-sub">
+                    <div class="carousel-price-sub">10000 EUR</div>
+                    <img src="{% static "img/auto/premium_138372249.jpg" %}" alt="auto2">
+                    <div class="carousel-caption--sub">
+                        <p>Auto 2</p>
+                    </div>
+                </div>
+                <div class="item-sub">
+                    <div class="carousel-price-sub">10000 EUR</div>
+                    <img src="{% static "img/auto/premium_138372249.jpg" %}" alt="auto3">
+                    <div class="carousel-caption--sub">
+                        <p>Auto 3</p>
+                    </div>
+                </div>
+                <div class="item-sub">
+                    <div class="carousel-price-sub">10000 EUR</div>
+                    <img src="{% static "img/auto/premium_138372249.jpg" %}" alt="auto3">
+                    <div class="carousel-caption--sub">
+                        <p>Auto 3</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-main-vip" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-main-vip" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+</section>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{% static "js/jquery.min.js" %}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/select/bootstrap-select.min.js" %}"></script>
+<script src="{% static "js/scripts.js" %}"></script>
+<script>
+
+    $(document).ready(function () {
+        $('#carousel-main-vip').carousel({
+            interval: 100000000
+        });
+        $('.selectpicker').selectpicker();
+    });
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+    .main-top {
+        height: 140px;
+        margin: 0 auto;
+    }
+
+    .main-top-logo {
+        height: 126px;
+        background-image: url("../img/logo.jpg");
+        background-repeat: no-repeat;
+    }
+
+    .carousel-inner .item.active .item-sub {
+        display: inline-block;
+    }
+
+    .carousel--main-vip .carousel-control {
+        width: 5%;
+    }
+
+    .carousel-inner--main-vip {
+        text-align: center;
+
+    }
+
+    .carousel--main-vip {
+        box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.15) inset, 0px 1px 5px rgba(0, 0, 0, 0.075);
+        margin-left: 20px;
+    }
+
+    .carousel--main-vip .carousel-control {
+        background-image: none;
+    }
+    .carousel-price-sub {
+     top: 20px;
+position: relative;
+background-color: #202020;
+color: white;
+padding: 0px 4px;
+    }
+    .left .carousel-price-sub, .right .carousel-price-sub {
+        visibility: hidden;
+    }
+
+    .add-option {
+        display: none;
+    }
+
+    /*  иконки для селекта и доп стили селекта */
+
+    .car-dody-style .glyphicon--img {
+        width: 70px;
+        height: 30px;
+        color: transparent;
+        line-height: 30px;
+    }
+    .car-dody-style .glyphicon--img::before {
+        content: "-";
+    }
+
+    .glyphicon-sedan {
+        background-image: url("../img/ico/sedan.png");
+    }
+    .glyphicon-any-body {
+        background-image: url("../img/ico/any_body.png");
+    }
+    .glyphicon-hatchback {
+        background-image: url("../img/ico/hatchback.png");
+    }
+    .glyphicon-convertible {
+        background-image: url("../img/ico/convertible.png");
+    }
+    .glyphicon-van {
+        background-image: url("../img/ico/van.png");
+    }
+    .glyphicon-suv {
+        background-image: url("../img/ico/SUV.png");
+    }
+    .glyphicon-coupe {
+        background-image: url("../img/ico/coupe.png");
+    }
+    .glyphicon-limousine {
+        background-image: url("../img/ico/limousine.png");
+    }
+    .glyphicon-universal {
+        background-image: url("../img/ico/universal.png");
+    }
+
+    .filter-option .glyphicon--img {
+        display: none;
+    }
+    .car-dody-style .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
+        line-height: 25px;
+    }
+
+    /* для резултаттов поиска  */
+
+    .search-result-item {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 16px;
+    }
+    .search-result-item .col-md-12 {
+        /*padding: 0px;*/
+    }
+    .row--search-result-item {
+        height: 24px;
+    }
+    .car-photo-main {
+        width: 100%;
+
+    }
+    .search-result-item--detail .col-md-3 {
+        padding: 0px 4px 4px 0px;
+        width: auto;
+    }
+    .search-result-item--detail .col-md-5 {
+        padding: 0px 4px 4px 0px;
+    }
+    .search-result-item.search-result-item--detail {
+        padding: 0px;
+    }
+    .row--detail {
+        height: 87px;
+    }
+    .car-photo-small {
+        height: 70px;
+    }
+    .car-shot-discr {
+        font-weight: bold;
+    }
+    .car-price {
+        text-align: right;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 24px;
+    }
+    .link-h2 {
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .car-photo-detail-main {
+        background: url("/img/no_vehicle_image_350x262.png") repeat scroll 0% 0% transparent;
+        width: 350px;
+        height: 262px;
+        float: left;
+    }
+
+    .car-photo-detail-small {
+          width: 400px;
+          float: left;
+
+    }
+
+    .car-photo-detail-small ul {
+        height: 228px;
+        overflow: hidden;
+        list-style: outside none none;
+        padding: 0px;
+    }
+    .car-photo-detail-small ul li {
+        margin: 0px 0px 4px 4px;
+        width: 96px;
+        height: 72px;
+        float: left;
+        background: url("/img/no_vehicle_image_96x72.png") no-repeat scroll left center transparent;
+
+    }
+    .car-photo-detail-small ul li img {
+        width: 96px;
+    }
+    .contact-information {
+        background-color: #FFFFB3;
+        border: 1px solid #D1D3D4;
+        padding: 8px;
+        font-weight: bold;
+    }
+    .car-detail-price {
+       font-size: 34px;
+font-weight: bold;
+line-height: 24px;
+    }
+    .car-detail-model {
+        font-size: 26px;
+    }
+.the-same-car {
+    margin-top: 16px;
+        border: 1px solid #D1D3D4;
+        padding: 8px;
+        font-weight: bold;
+}
